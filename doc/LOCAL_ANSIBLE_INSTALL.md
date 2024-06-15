@@ -17,7 +17,7 @@ Please use the in-cluster installation method in chapter 1:
 Clone the GitHub Repository
 
 ```
-git clone https://github.com/niklaushirt/ibm-aiops-deployer.git -b main
+git clone https://github.com/oba302/ibm-aiops-deployer.git -b main
 ```
 
 
