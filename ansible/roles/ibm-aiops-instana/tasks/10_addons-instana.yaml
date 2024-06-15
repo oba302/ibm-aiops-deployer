@@ -196,7 +196,7 @@
     # Postgres operator installation
     helm repo add postgres https://opensource.zalando.com/postgres-operator/charts/postgres-operator
     helm repo update
-    helm install postgres-operator postgres/postgres-operator  --version=1.10.0 --set configGeneral.kubernetes_use_configmaps=true --set securityContext.runAsUser=1000860000 --namespace=instana-datastores
+    helm install postgres-operator postgres/postgres-operator  --version=1.10.1 --set configGeneral.kubernetes_use_configmaps=true --set securityContext.runAsUser=1000860000 --namespace=instana-datastores
   ignore_errors: true
   register: output
   args:
