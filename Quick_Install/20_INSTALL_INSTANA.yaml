@@ -167,7 +167,7 @@ data:
         #storage_class_file: automatic
         #storage_class_block: automatic
 
-  INSTALL_REPO: 'https://github.com/niklaushirt/ibm-aiops-deployer.git -b main'
+  INSTALL_REPO: 'https://github.com/oba302/ibm-aiops-deployer.git -b main'
 
 
 
