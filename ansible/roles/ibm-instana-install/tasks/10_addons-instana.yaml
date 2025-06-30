@@ -427,25 +427,25 @@
     template: ./templates/instana-datastores/postgres-instance.j2
     
 
-- name: 🚀 INSTANA - Get KAFKA PASSWORD
-  shell: |
-    KAFKA_PWD=$(oc get secret strimzi-kafka-user -o json -n instana-datastores --ignore-not-found| jq -r .data.password | base64 -d)
-    while [ -z "$KAFKA_PWD"  ]
-    do
-      #echo "Waiting for Kafka"
-      KAFKA_PWD=$(oc get secret strimzi-kafka-user -o json -n instana-datastores --ignore-not-found| jq -r .data.password | base64 -d)
-      sleep 10
-    done
-    echo $KAFKA_PWD
-  ignore_errors: true
-  register: KAFKA_PWD
-  args:
-    executable: /bin/bash
-- name: 🟣  OUTPUT 
-  debug:
-    var: KAFKA_PWD.stdout
-- name: 🚀 INSTANA - Save KAFKA PASSWORD {{ KAFKA_PWD.stdout }} 
-  set_fact: KAFKA_PWD={{ KAFKA_PWD.stdout }} 
+# - name: 🚀 INSTANA - Get KAFKA PASSWORD
+#   shell: |
+#     KAFKA_PWD=$(oc get secret strimzi-kafka-user -o json -n instana-datastores --ignore-not-found| jq -r .data.password | base64 -d)
+#     while [ -z "$KAFKA_PWD"  ]
+#     do
+#       #echo "Waiting for Kafka"
+#       KAFKA_PWD=$(oc get secret strimzi-kafka-user -o json -n instana-datastores --ignore-not-found| jq -r .data.password | base64 -d)
+#       sleep 10
+#     done
+#     echo $KAFKA_PWD
+#   ignore_errors: true
+#   register: KAFKA_PWD
+#   args:
+#     executable: /bin/bash
+# - name: 🟣  OUTPUT 
+#   debug:
+#     var: KAFKA_PWD.stdout
+# - name: 🚀 INSTANA - Save KAFKA PASSWORD {{ KAFKA_PWD.stdout }} 
+#   set_fact: KAFKA_PWD={{ KAFKA_PWD.stdout }} 
 
 
 
