@@ -47,9 +47,7 @@ datastoreConfigs:
       password: {{ CASSANDRA_PWD }}
       adminUser: instana-superuser
       adminPassword: {{ CASSANDRA_PWD }}
-  kafkaConfig:
-      adminUser: strimzi-kafka-user
-      adminPassword: {{ KAFKA_PWD }}
+  kafkaConfig: {}
 imagePullSecrets:
   - name: instana-registry
 downloadKey: {{current_agent_key}}
