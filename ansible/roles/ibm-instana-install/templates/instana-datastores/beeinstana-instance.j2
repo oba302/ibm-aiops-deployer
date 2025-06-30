@@ -1,5 +1,5 @@
 ---
-kind: Secret
+{# kind: Secret
 apiVersion: v1
 metadata:
   name: beeinstana-kafka-creds
@@ -7,7 +7,7 @@ metadata:
 type: Opaque
 stringData:
   username: strimzi-kafka-user
-  password: {{ KAFKA_PWD }}
+  password: {{ KAFKA_PWD }} #}
 ---
 kind: Secret
 apiVersion: v1
