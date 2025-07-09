@@ -14,14 +14,9 @@ spec:
         port: 9092
         type: internal
         tls: false
-        authentication:
-          type: scram-sha-512
-        configuration:
-          useServiceDnsDomain: true
-    authorization:
-      type: simple
-      superUsers:
-        - strimzi-kafka-user
+    config:
+      allow.everyone.if.no.acl.found: true
+
     storage:
       type: jbod
       class: {{ STORAGE_CLASS_LARGE_BLOCK }}
